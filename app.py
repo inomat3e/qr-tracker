@@ -164,7 +164,7 @@ def logout():
 @admin_required
 def home():
     with connect() as con:
-        rows = con.execute("SELECT * FROM links ORDER BY rowid DESC").fetchall()
+        rows = con.execute("SELECT * FROM links ORDER BY id DESC").fetchall()
     return render_template_string(HOME, rows=rows)
 
 @app.post("/create")
